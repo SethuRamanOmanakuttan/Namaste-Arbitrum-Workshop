@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for a more sleek look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 200, 0.5);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 200, 0.8);
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-primary text-white font-sans text-base;
+    color-scheme: dark;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background-image: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.03) 0%, transparent 70%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white font-display font-bold tracking-tight leading-tight;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  p, span, a, li {
+    @apply text-gray-100 leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4;
+  }
+  
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-center mb-10 text-white relative;
+  }
+  
+  .section-title::after {
+    @apply content-[''] absolute w-16 h-[2px] bg-gradient-to-r from-secondary to-accent left-1/2 -translate-x-1/2 bottom-[-1rem];
+  }
+  
+  .btn {
+    @apply px-6 py-3 font-bold transition-all duration-300 inline-block border tracking-wide text-center shadow-sleek-shadow;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white border-white hover:bg-transparent hover:text-white hover:border-secondary hover:shadow-neon-glow;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-black border-secondary hover:bg-transparent hover:text-secondary hover:shadow-neon-glow;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-white border-accent hover:bg-transparent hover:text-accent hover:shadow-pink-glow;
+  }
+  
+  .retro-text {
+    @apply font-['Press_Start_2P'] tracking-tight text-xs md:text-sm;
+  }
+  
+  .pixel-text {
+    @apply font-['Space_Mono'] text-base;
+  }
+  
+  .modern-text {
+    @apply font-sans text-base leading-relaxed;
+  }
+  
+  .retro-card {
+    @apply bg-white/5 p-6 border border-white/10 relative z-10 backdrop-blur-sm shadow-vector-shadow hover:shadow-neon-glow transition-all duration-300;
+  }
+  
+  .vector-card {
+    @apply bg-white/5 p-6 border border-white/10 relative z-10 backdrop-blur-sm shadow-vector-shadow hover:shadow-neon-glow transition-all duration-300;
+  }
+  
+  .retro-border {
+    @apply border;
+  }
+  
+  .retro-border-secondary {
+    @apply border border-secondary;
+  }
+  
+  .retro-border-accent {
+    @apply border border-accent;
+  }
+  
+  .retro-border-tertiary {
+    @apply border border-tertiary;
+  }
+  
+  .bg-grid-pattern {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .bg-grid-pattern-large {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+    background-size: 40px 40px;
+  }
+  
+  .vector-gradient-bg {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
+    backdrop-filter: blur(10px);
+  }
+  
+  .timeline-dot {
+    @apply w-6 h-6 bg-secondary border border-white shadow-neon-glow;
+  }
+  
+  .timeline-line {
+    @apply h-1 flex-grow bg-gradient-to-r from-secondary to-accent;
+  }
+  
+  /* Pixel art elements */
+  .pixel-corner {
+    clip-path: polygon(
+      0% 0%, 
+      100% 0%, 
+      100% 80%, 
+      80% 100%, 
+      0% 100%
+    );
+  }
+  
+  .pixel-button {
+    @apply border-b-8 border-r-8 border-l-2 border-t-2;
+  }
+  
+  .pixel-button:active {
+    @apply border-b-2 border-r-2 border-l-8 border-t-8 translate-y-1;
+  }
+  
+  .glow-effect {
+    @apply relative;
+  }
+  
+  .glow-effect::before {
+    @apply content-[''] absolute -inset-0.5 bg-glow-conic rounded-lg blur opacity-75 -z-10 transition duration-1000 animate-pulse;
+  }
+  
+  .nav-link {
+    @apply px-4 py-2 transition-all duration-300 hover:text-secondary relative;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-secondary to-accent transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .nav-link-active {
+    @apply text-secondary;
+  }
+  
+  .nav-link-active::after {
+    @apply w-full;
+  }
+  
+  .timeline-dot {
+    @apply w-4 h-4 rounded-full bg-accent;
+  }
+  
+  .timeline-line {
+    @apply h-1 bg-accent flex-grow;
+  }
+  
+  .track-card {
+    @apply bg-white/5 backdrop-blur-sm p-6 text-text-light border-l-2 border-secondary shadow-vector-shadow hover:shadow-neon-glow transition-all duration-300 hover:translate-y-[-5px];
+  }
+  
+  .prize-card {
+    @apply bg-white/5 backdrop-blur-sm text-text-light p-6 border-l-2 border-accent shadow-vector-shadow hover:shadow-pink-glow transition-all duration-300 hover:translate-y-[-5px];
+  }
+  
+  .resource-card {
+    @apply bg-white/5 backdrop-blur-sm p-6 border-l-2 border-tertiary shadow-vector-shadow hover:shadow-neon-glow transition-all duration-300 hover:translate-y-[-5px];
+  }
+  
+  .vector-decoration {
+    @apply absolute pointer-events-none opacity-10 border border-secondary;
+  }
+  
+  .vector-circle {
+    @apply vector-decoration rounded-full;
+  }
+  
+  .vector-square {
+    @apply vector-decoration;
+  }
+  
+  .vector-line {
+    @apply absolute h-px bg-gradient-to-r from-transparent via-secondary to-transparent;
+  }
+  
+  .faq-item {
+    @apply border-b border-white/20 py-6;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-6;
+  }
+}
