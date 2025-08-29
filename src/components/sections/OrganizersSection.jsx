@@ -77,7 +77,7 @@ const OrganizersSection = () => {
     },
     {
       id: 'web3compass',
-      name: 'Web3 Compass',
+      name: 'Web3Compass',
       description: 'A platform built by builders, for builders, to explore and master Web3 and AI through hands-on campaigns and challenges.',
       logo: '/images/web3compass.png',
       website: "https://www.web3compass.xyz/",

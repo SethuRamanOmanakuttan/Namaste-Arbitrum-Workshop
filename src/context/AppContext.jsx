@@ -66,7 +66,7 @@ export const AppProvider = ({ children }) => {
         logo: '/images/namaste.png'
       },
       {
-        name: 'Web3 Compass',
+        name: 'Web3Compass',
         description: 'A platform built by builders, for builders, to explore and master Web3 and AI through hands-on campaigns and challenges.',
         social: {
           twitter: 'https://x.com/the_web3compass',
