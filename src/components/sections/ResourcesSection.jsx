@@ -52,18 +52,32 @@ const ResourcesSection = () => {
       link: hackathonData.resources.doc
     },
     {
-      id: 'tutorials',
-      title: 'Video Tutorials',
-      description: 'Step-by-step video tutorials to help you get started with Stylus',
+      id: 'rust-tutorials',
+      title: 'Stylus - Rust Edition',
+      description: 'Step-by-step video tutorials for building with Stylus using Rust',
       icon: 'video',
-      link: 'https://www.youtube.com/@pyorxyz'
+      link: 'https://www.youtube.com/playlist?list=PLxVqmuG51ci3DlkCuoZAKw38Ax0WAB51z'
+    },
+    {
+      id: 'cpp-tutorials',
+      title: 'Stylus - C & C++ Edition',
+      description: 'Learn how to build on Arbitrum with Stylus using C and C++',
+      icon: 'video',
+      link: 'https://www.youtube.com/playlist?list=PLxVqmuG51ci0f4l7G9sB5WjYW9QX4rjqb'
+    },
+    {
+      id: 'go-tutorials',
+      title: 'Stylus - Go Edition',
+      description: 'Tutorials for developing with Stylus using Go programming language',
+      icon: 'video',
+      link: 'https://www.youtube.com/playlist?list=PLxVqmuG51ci3ZbFmadzC5bKMdkIYsoeUj'
     },
     {
       id: 'examples',
       title: 'Code Examples',
       description: 'Sample projects and code snippets to jumpstart your development',
       icon: 'code',
-      link: 'https://github.com/OffchainLabs/stylus-hello-world'
+      link: 'https://github.com/snehasharma76/ArbitrumStylus_RUST/tree/master/mint-token-dapp'
     }
   ];
 
@@ -90,17 +104,39 @@ const ResourcesSection = () => {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {resources.map((resource, index) => (
-            <ResourceCard 
-              key={resource.id}
-              title={resource.title}
-              description={resource.description}
-              icon={resource.icon}
-              link={resource.link}
-              index={index}
-            />
-          ))}
+        <div className="flex flex-col space-y-8">
+          {/* Video tutorials section with title */}
+          <div className="mb-2">
+            <h3 className="text-xl font-bold text-center mb-6">
+              <span className="border-b-2 border-secondary pb-1">Video Tutorials</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {resources.filter(r => r.icon === 'video').map((resource, index) => (
+                <ResourceCard 
+                  key={resource.id}
+                  title={resource.title}
+                  description={resource.description}
+                  icon={resource.icon}
+                  link={resource.link}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+          
+          {/* Other resources section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {resources.filter(r => r.icon !== 'video').map((resource, index) => (
+              <ResourceCard 
+                key={resource.id}
+                title={resource.title}
+                description={resource.description}
+                icon={resource.icon}
+                link={resource.link}
+                index={index + 3} // Offset the animation delay
+              />
+            ))}
+          </div>
         </div>
         
         <motion.div

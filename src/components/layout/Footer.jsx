@@ -182,6 +182,42 @@ const Footer = () => {
                   <span className="text-secondary text-xs font-['Press_Start_2P'] opacity-0 group-hover:opacity-100 transition-opacity">{'>'}</span> Resources
                 </a>
               </li>
+              <li>
+                <a href="#faq" className="hover:text-secondary transition-colors flex items-center gap-2 group" onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector('#faq');
+                  if (element) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                      top: elementPosition - headerHeight,
+                      behavior: 'smooth'
+                    });
+                    // Update URL without the hash
+                    history.pushState("", document.title, window.location.pathname + window.location.search);
+                  }
+                }}>
+                  <span className="text-secondary text-xs font-['Press_Start_2P'] opacity-0 group-hover:opacity-100 transition-opacity">{'>'}</span> FAQ
+                </a>
+              </li>
+              <li>
+                <a href="#code-of-conduct" className="hover:text-secondary transition-colors flex items-center gap-2 group" onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector('#code-of-conduct');
+                  if (element) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                      top: elementPosition - headerHeight,
+                      behavior: 'smooth'
+                    });
+                    // Update URL without the hash
+                    history.pushState("", document.title, window.location.pathname + window.location.search);
+                  }
+                }}>
+                  <span className="text-secondary text-xs font-['Press_Start_2P'] opacity-0 group-hover:opacity-100 transition-opacity">{'>'}</span> Code of Conduct
+                </a>
+              </li>
             </ul>
           </motion.div>
           
