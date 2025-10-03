@@ -33,6 +33,7 @@ const Header = () => {
     { name: 'Submission', path: '#submission' },
     { name: 'Resources', path: '#resources' },
     { name: 'Timeline', path: '#timeline' },
+    { name: 'FAQ', path: '#faq' },
     { name: 'Organizers', path: '#organizers' },
   ];
 
@@ -126,7 +127,7 @@ const Header = () => {
               <span>Register</span>
             </motion.a>
             <div className="absolute -bottom-8 right-0 bg-accent/90 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
-              Opens Sept 20
+              Opens {hackathonData.dates.registration.start}
             </div>
           </motion.div>
         </nav>
@@ -221,7 +222,7 @@ const Header = () => {
                   <span>Register Now</span>
                 </motion.a>
                 <div className="absolute -bottom-6 left-0 right-0 text-center text-xs text-accent font-bold">
-                  Opens September 20th
+                  Opens {hackathonData.dates.registration.start}
                 </div>
               </div>
             </div>
