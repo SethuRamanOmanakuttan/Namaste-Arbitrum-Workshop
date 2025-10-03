@@ -8,14 +8,20 @@ const HeroSection = () => {
   
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center bg-primary text-white relative overflow-hidden">
-      {/* Vector-style grid background */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+      {/* Background image - hidden on mobile, visible on desktop */}
+      <div className="absolute inset-0 bg-center bg-no-repeat hidden md:block" style={{ 
+        backgroundImage: 'url(/images/bg.png)',
+        backgroundSize: 'contain', // Ensures image maintains aspect ratio without stretching
+        backgroundPosition: 'center center',
+        opacity: 0.98, // Almost fully opaque
+        mixBlendMode: 'normal'
+      }}></div>
       
-      {/* Geometric shapes for modern vector look */}
-      <div className="absolute top-20 right-20 w-40 h-40 border-4 border-secondary opacity-20 rotate-45"></div>
-      <div className="absolute bottom-20 left-20 w-60 h-60 border-4 border-secondary opacity-10 -rotate-12"></div>
-      <div className="absolute top-1/3 left-1/4 w-20 h-20 bg-tertiary opacity-10 rotate-12"></div>
-      <div className="absolute bottom-1/3 right-1/4 w-32 h-32 border-4 border-accent opacity-10 rotate-45"></div>
+      {/* Subtle grid overlay for texture */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+      
+      {/* Gradient overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-primary/70"></div>
       
       <div className="container-custom relative z-10 py-16 md:py-24">
         <motion.div 
