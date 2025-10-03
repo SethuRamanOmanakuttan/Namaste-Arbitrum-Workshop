@@ -100,10 +100,9 @@ const FAQSection = () => {
       answer: (
         <div className="space-y-3">
           <ul className="list-disc pl-5 space-y-1">
-            <li><span className="font-semibold">$1000</span> (1st prize per track)</li>
-            <li><span className="font-semibold">$500</span> (2nd prize per track)</li>
-            <li><span className="font-semibold">$300</span> (3rd prize per track)</li>
-            <li><span className="font-semibold">$200</span> (4th prize per track)</li>
+            <li><span className="font-semibold">$500</span> (1st prize per track)</li>
+            <li><span className="font-semibold">$300</span> (2nd prize per track)</li>
+            <li><span className="font-semibold">$200</span> (3rd prize per track)</li>
           </ul>
           <p className="font-semibold">Total prize pool: $3000 across 3 tracks.</p>
         </div>
