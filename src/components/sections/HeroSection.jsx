@@ -9,9 +9,9 @@ const HeroSection = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center bg-primary text-white relative overflow-hidden">
       {/* Background image - hidden on mobile, visible on desktop */}
-      <div className="absolute inset-0 bg-center bg-no-repeat hidden md:block" style={{ 
+      <div className="absolute inset-x-[5%] inset-y-[5%] bg-center bg-no-repeat hidden md:block" style={{ 
         backgroundImage: 'url(/images/bg.png)',
-        backgroundSize: 'contain', // Ensures image maintains aspect ratio without stretching
+        backgroundSize: 'contain', // Maintains aspect ratio without stretching
         backgroundPosition: 'center center',
         opacity: 0.98, // Almost fully opaque
         mixBlendMode: 'normal'
