@@ -65,7 +65,7 @@ const Layout = () => {
         </div>
         
         <Header />
-        <main className="flex-grow z-10">
+        <main className="flex-grow z-10 pt-16 md:pt-20">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

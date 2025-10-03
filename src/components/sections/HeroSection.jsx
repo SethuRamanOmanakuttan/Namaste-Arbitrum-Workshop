@@ -7,7 +7,7 @@ const HeroSection = () => {
   const { hackathonData } = useAppContext();
   
   return (
-    <section className="min-h-screen flex items-center justify-center bg-primary text-white relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center bg-primary text-white relative overflow-hidden">
       {/* Vector-style grid background */}
       <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
       
@@ -53,12 +53,16 @@ const HeroSection = () => {
           </motion.span>
           
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-8 tracking-tight"
+            className="font-retro text-4xl md:text-6xl mb-8 tracking-tight text-[#e3066e] relative"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
+            style={{
+              textShadow: '2px 0 #00FFC8',
+              letterSpacing: '0.05em'
+            }}
           >
-            BUILD WITH <span className="text-secondary">STYLUS</span>
+            BUILD WITH STYLUS
           </motion.h1>
           
           <motion.p 

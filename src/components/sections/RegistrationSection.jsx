@@ -72,8 +72,13 @@ const RegistrationSection = () => {
               viewport={{ once: true }}
             >
               <h3 className="text-2xl font-bold mb-4 text-center text-secondary retro-text">JOIN THE HACKATHON</h3>
+              <div className="bg-accent/10 border border-accent/30 p-3 mb-6 rounded-sm">
+                <p className="text-center font-bold text-accent">
+                  Registrations open on {hackathonData.dates.registration.start}
+                </p>
+              </div>
               <p className="text-lg mb-6 text-center">
-                Ready to showcase your skills? Register now to participate in our hackathon and compete for amazing prizes!
+                Ready to showcase your skills? Register to participate in our hackathon and compete for amazing prizes!
               </p>
               
               <div className="flex justify-center">

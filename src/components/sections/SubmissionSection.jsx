@@ -50,7 +50,7 @@ const SubmissionSection = () => {
               </h3>
               <p className="text-lg mb-4 text-center">
                 {currentPhase === 'registration' 
-                  ? `Project submissions will open on ${hackathonData.dates.kickoff}.` 
+                  ? `Project submissions will open on ${hackathonData.dates.submissionStart}.` 
                   : 'The submission deadline has passed. Thank you for your participation!'}
               </p>
             </motion.div>

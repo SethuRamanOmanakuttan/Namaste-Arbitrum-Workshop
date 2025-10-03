@@ -10,6 +10,7 @@ A modern, responsive hackathon website built with React, Vite, and Tailwind CSS.
 - Registration and submission forms
 - Interactive sections for tracks, prizes, timeline, and more
 - FAQ section with expandable questions
+- Comprehensive Code of Conduct section
 - Community section with WhatsApp integration
 - About section with organizer information
 

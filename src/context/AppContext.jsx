@@ -16,12 +16,13 @@ export const AppProvider = ({ children }) => {
     description: 'An online hackathon for students and young developers across India to start building dApps on Arbitrum using Stylus.',
     dates: {
       registration: {
-        start: 'September 15, 2025',
-        end: 'September 30, 2025',
+        start: 'October 6, 2025',
+        end: 'October 9, 2025',
       },
-      kickoff: 'October 1, 2025',
+      onlineSession: 'To be finalized',
+      submissionStart: 'October 10, 2025',
       submission: 'October 15, 2025',
-      announcement: 'October 20, 2025',
+      announcement: 'October 31, 2025',
     },
     prizePool: '$3,000',
     prizes: {
@@ -35,18 +36,39 @@ export const AppProvider = ({ children }) => {
         name: 'DeFi & Payments',
         description: 'Build wallets, staking apps, or finance tools',
         icon: 'wallet',
+        examples: [
+          'Cross-chain DEX with Stylus-powered liquidity pools',
+          'Yield aggregator with optimized gas efficiency',
+          'Multi-signature wallet with social recovery',
+          'Payment streaming protocol for freelancers',
+          'Decentralized lending platform with novel collateral types'
+        ]
       },
       {
         id: 'ai',
         name: 'AI x Crypto',
         description: 'Explore AI-powered agents, tools, or integrations',
         icon: 'robot',
+        examples: [
+          'AI-powered trading bot with on-chain execution',
+          'Machine learning model marketplace on Arbitrum',
+          'Decentralized content moderation using AI',
+          'Predictive analytics dashboard for DeFi protocols',
+          'AI-generated NFT platform with royalty distribution'
+        ]
       },
       {
         id: 'rwa',
         name: 'RWA & Stablecoins',
         description: 'Work on real-world assets or stablecoin use cases',
         icon: 'coins',
+        examples: [
+          'Tokenized real estate investment platform',
+          'Carbon credit marketplace with verification',
+          'Algorithmic stablecoin with novel stability mechanism',
+          'Supply chain financing using tokenized invoices',
+          'Commodity-backed stablecoin with redemption features'
+        ]
       },
     ],
     resources: {

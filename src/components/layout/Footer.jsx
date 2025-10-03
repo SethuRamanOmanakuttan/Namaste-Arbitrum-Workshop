@@ -89,7 +89,20 @@ const Footer = () => {
             </h3>
             <ul className="space-y-4">
               <li>
-                <a href="#hero" className="hover:text-secondary transition-colors flex items-center gap-2 group">
+                <a href="#hero" className="hover:text-secondary transition-colors flex items-center gap-2 group" onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector('#hero');
+                  if (element) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                      top: elementPosition - headerHeight,
+                      behavior: 'smooth'
+                    });
+                    // Update URL without the hash
+                    history.pushState("", document.title, window.location.pathname + window.location.search);
+                  }
+                }}>
                   <span className="text-secondary text-xs font-retro opacity-0 group-hover:opacity-100 transition-opacity">{'>'}</span> 
                   <span className="relative overflow-hidden group-hover:pr-2">
                     <span className="relative z-10">Home</span>
@@ -98,22 +111,74 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#registration" className="hover:text-secondary transition-colors flex items-center gap-2 group">
+                <a href="#registration" className="hover:text-secondary transition-colors flex items-center gap-2 group" onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector('#registration');
+                  if (element) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                      top: elementPosition - headerHeight,
+                      behavior: 'smooth'
+                    });
+                    // Update URL without the hash
+                    history.pushState("", document.title, window.location.pathname + window.location.search);
+                  }
+                }}>
                   <span className="text-secondary text-xs font-['Press_Start_2P'] opacity-0 group-hover:opacity-100 transition-opacity">{'>'}</span> Registration
                 </a>
               </li>
               <li>
-                <a href="#tracks" className="hover:text-secondary transition-colors flex items-center gap-2 group">
+                <a href="#tracks" className="hover:text-secondary transition-colors flex items-center gap-2 group" onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector('#tracks');
+                  if (element) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                      top: elementPosition - headerHeight,
+                      behavior: 'smooth'
+                    });
+                    // Update URL without the hash
+                    history.pushState("", document.title, window.location.pathname + window.location.search);
+                  }
+                }}>
                   <span className="text-secondary text-xs font-['Press_Start_2P'] opacity-0 group-hover:opacity-100 transition-opacity">{'>'}</span> Tracks
                 </a>
               </li>
               <li>
-                <a href="#submission" className="hover:text-secondary transition-colors flex items-center gap-2 group">
+                <a href="#submission" className="hover:text-secondary transition-colors flex items-center gap-2 group" onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector('#submission');
+                  if (element) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                      top: elementPosition - headerHeight,
+                      behavior: 'smooth'
+                    });
+                    // Update URL without the hash
+                    history.pushState("", document.title, window.location.pathname + window.location.search);
+                  }
+                }}>
                   <span className="text-secondary text-xs font-['Press_Start_2P'] opacity-0 group-hover:opacity-100 transition-opacity">{'>'}</span> Submission
                 </a>
               </li>
               <li>
-                <a href="#resources" className="hover:text-secondary transition-colors flex items-center gap-2 group">
+                <a href="#resources" className="hover:text-secondary transition-colors flex items-center gap-2 group" onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector('#resources');
+                  if (element) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                      top: elementPosition - headerHeight,
+                      behavior: 'smooth'
+                    });
+                    // Update URL without the hash
+                    history.pushState("", document.title, window.location.pathname + window.location.search);
+                  }
+                }}>
                   <span className="text-secondary text-xs font-['Press_Start_2P'] opacity-0 group-hover:opacity-100 transition-opacity">{'>'}</span> Resources
                 </a>
               </li>

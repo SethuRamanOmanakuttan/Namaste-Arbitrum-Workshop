@@ -38,7 +38,7 @@ const Header = () => {
 
   return (
     <header 
-      className={`py-4 sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-primary/90 backdrop-blur-md shadow-vector-shadow' : 'bg-transparent'}`}
+      className={`py-4 fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-primary/90 backdrop-blur-md shadow-vector-shadow' : 'bg-transparent'}`}
     >
       {/* Vector accent line at the bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-secondary to-transparent"></div>
@@ -77,25 +77,58 @@ const Header = () => {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.3, ease: "easeIn" }}
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.querySelector(link.path);
+                if (element) {
+                  const headerHeight = document.querySelector('header').offsetHeight;
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                  window.scrollTo({
+                    top: elementPosition - headerHeight,
+                    behavior: 'smooth'
+                  });
+                  // Update URL without the hash
+                  history.pushState("", document.title, window.location.pathname + window.location.search);
+                }
+              }}
             >
               <span className="relative z-10">{link.name}</span>
               <span className="absolute bottom-0 left-0 w-full h-0 bg-secondary/10 group-hover:h-full transition-all duration-300 -z-10"></span>
             </motion.a>
           ))}
-          <motion.a
-            href={hackathonData?.resources?.registrationForm || '#registration'}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-primary text-black font-bold ml-2 px-5 py-2 border border-secondary hover:bg-transparent hover:text-secondary transition-all duration-300 flex items-center gap-2 shadow-sleek-shadow hover:shadow-neon-glow"
+          <motion.div
+            className="relative group"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: navLinks.length * 0.1, duration: 0.3, ease: "easeIn" }}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
           >
-            <span className="font-retro text-xs">{'>'}</span>
-            <span>Register</span>
-          </motion.a>
+            <motion.a
+              href="#registration"
+              className="bg-primary text-black font-bold ml-2 px-5 py-2 border border-secondary hover:bg-transparent hover:text-secondary transition-all duration-300 flex items-center gap-2 shadow-sleek-shadow hover:shadow-neon-glow"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.querySelector('#registration');
+                if (element) {
+                  const headerHeight = document.querySelector('header').offsetHeight;
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                  window.scrollTo({
+                    top: elementPosition - headerHeight,
+                    behavior: 'smooth'
+                  });
+                  // Update URL without the hash
+                  history.pushState("", document.title, window.location.pathname + window.location.search);
+                }
+              }}
+            >
+              <span className="font-retro text-xs">{'>'}</span>
+              <span>Register</span>
+            </motion.a>
+            <div className="absolute -bottom-8 right-0 bg-accent/90 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+              Opens Sept 20
+            </div>
+          </motion.div>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -130,30 +163,67 @@ const Header = () => {
                 <motion.a
                   key={link.name}
                   href={link.path}
-                  className="py-3 px-4 text-white hover:text-secondary transition-colors border-l border-transparent hover:border-secondary font-medium relative group overflow-hidden"
-                  onClick={() => setIsMenuOpen(false)}
+                  className="py-3 px-4 text-white hover:text-accent transition-colors border-l border-transparent hover:border-accent font-medium relative group overflow-hidden"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMenuOpen(false);
+                    const element = document.querySelector(link.path);
+                    if (element) {
+                      // Wait for menu close animation to complete
+                      setTimeout(() => {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                        window.scrollTo({
+                          top: elementPosition - headerHeight,
+                          behavior: 'smooth'
+                        });
+                        // Update URL without the hash
+                        history.pushState("", document.title, window.location.pathname + window.location.search);
+                      }, 300);
+                    }
+                  }}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05, duration: 0.2, ease: easings.easeStep }}
                 >
                   <span className="relative z-10">{link.name}</span>
-                  <span className="absolute bottom-0 left-0 w-full h-0 bg-secondary/10 group-hover:h-full transition-all duration-300 -z-10"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-0 bg-accent/10 group-hover:h-full transition-all duration-300 -z-10"></span>
                 </motion.a>
               ))}
-              <motion.a
-                href={hackathonData?.resources?.registrationForm || '#registration'}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-secondary text-black font-bold mt-6 mx-4 py-3 text-center flex items-center justify-center gap-2 border border-secondary hover:bg-transparent hover:text-secondary transition-all duration-300 shadow-sleek-shadow hover:shadow-neon-glow"
-                onClick={() => setIsMenuOpen(false)}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: navLinks.length * 0.05, duration: 0.2, ease: easings.easeStep }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="font-retro text-xs">{'>'}</span>
-                <span>Register Now</span>
-              </motion.a>
+              <div className="relative mt-6 mx-4">
+                <motion.a
+                  href="#registration"
+                  className="bg-secondary text-black font-bold w-full py-3 text-center flex items-center justify-center gap-2 border border-secondary hover:bg-transparent hover:text-secondary transition-all duration-300 shadow-sleek-shadow hover:shadow-neon-glow"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMenuOpen(false);
+                    const element = document.querySelector('#registration');
+                    if (element) {
+                      // Wait for menu close animation to complete
+                      setTimeout(() => {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                        window.scrollTo({
+                          top: elementPosition - headerHeight,
+                          behavior: 'smooth'
+                        });
+                        // Update URL without the hash
+                        history.pushState("", document.title, window.location.pathname + window.location.search);
+                      }, 300);
+                    }
+                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: navLinks.length * 0.05, duration: 0.2, ease: easings.easeStep }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="font-retro text-xs">{'>'}</span>
+                  <span>Register Now</span>
+                </motion.a>
+                <div className="absolute -bottom-6 left-0 right-0 text-center text-xs text-accent font-bold">
+                  Opens September 20th
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
