@@ -193,7 +193,7 @@ const Header = () => {
               ))}
               <div className="relative mt-6 mx-4">
                 <motion.a
-                  href="#registration"
+                  href="https://forms.gle/KTjNfHy3wDJWAStq6"
                   className="bg-secondary text-black font-bold w-full py-3 text-center flex items-center justify-center gap-2 border border-secondary hover:bg-transparent hover:text-secondary transition-all duration-300 shadow-sleek-shadow hover:shadow-neon-glow"
                   onClick={(e) => {
                     e.preventDefault();
