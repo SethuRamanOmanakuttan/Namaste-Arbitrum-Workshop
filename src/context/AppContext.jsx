@@ -73,7 +73,7 @@ export const AppProvider = ({ children }) => {
     ],
     resources: {
       doc: 'https://assets.pyor.xyz/namaste-arbitrum/build-with-stylus.pdf',
-      registrationForm: 'https://docs.google.com/forms/d/e/1FAIpQLSclBukvhlW6HPSQH7BLs3G5CbDuX9eRwwcVgfIHQvZbmhWjlg/viewform?usp=dialog',
+      registrationForm: 'https://forms.gle/KTjNfHy3wDJWAStq6',
     },
     organizers: [
       {

@@ -252,7 +252,7 @@ const TimelineSection = () => {
           viewport={{ once: true }}
         >
           <a 
-            href={hackathonData?.resources?.registrationForm || '#registration'} 
+            href="https://forms.gle/KTjNfHy3wDJWAStq6"
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-accent text-white px-8 py-3 border-2 border-accent hover:shadow-pink-glow transition-all duration-300 inline-flex items-center gap-2 font-medium"
