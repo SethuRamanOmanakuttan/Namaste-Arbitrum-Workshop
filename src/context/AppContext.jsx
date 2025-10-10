@@ -16,13 +16,13 @@ export const AppProvider = ({ children }) => {
     description: 'An online hackathon for students and young developers across India to start building dApps on Arbitrum using Stylus.',
     dates: {
       registration: {
-        start: 'October 6, 2025',
-        end: 'October 9, 2025',
+        start: 'October 10, 2025',
+        end: 'October 14, 2025',
       },
       onlineSession: 'To be finalized',
-      submissionStart: 'October 10, 2025',
-      submission: 'October 15, 2025',
-      announcement: 'October 31, 2025',
+      submissionStart: 'October 15, 2025',
+      submission: 'October 31, 2025',
+      announcement: 'November 5, 2025',
     },
     prizePool: '$3,000',
     prizes: {
