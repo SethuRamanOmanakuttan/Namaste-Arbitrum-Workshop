@@ -58,7 +58,7 @@ const FAQSection = () => {
     {
       id: 1,
       question: 'How long is the hackathon?',
-      answer: `You have 10 days to build and submit your project. The submission window is from ${hackathonData.dates.submissionStart} to ${hackathonData.dates.submission}`
+      answer: `You have until November 5, 2025 to build and submit your project. Winners will be announced on November 10, 2025.`
     },
     {
       id: 2,
@@ -73,15 +73,70 @@ const FAQSection = () => {
     {
       id: 4,
       question: 'How do I register?',
-      answer: 'Fill the Registration Form first. It\'s mandatory to officially enter the hackathon.'
+      answer: (
+        <div>
+          <p>Fill the Registration Form first. It's mandatory to officially enter the hackathon.</p>
+          <a 
+            href={hackathonData.resources.registrationForm} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center gap-2 text-secondary hover:text-accent transition-colors duration-300 underline"
+          >
+            Registration Form →
+          </a>
+        </div>
+      )
     },
     {
       id: 5,
-      question: 'How do I submit my project?',
-      answer: 'Use the Submission Link before the deadline. Submissions after the window will not be accepted.'
+      question: 'When is the online workshop?',
+      answer: (
+        <div>
+          <p className="mb-2">Join us for an online workshop on <span className="font-semibold">October 25, 2025 (Saturday) from 6:30 PM to 8:30 PM</span>.</p>
+          <p className="mb-3">This workshop will help you get started with building on Arbitrum Stylus.</p>
+          <a 
+            href={hackathonData.resources.workshopForm} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center gap-2 text-secondary hover:text-accent transition-colors duration-300 underline"
+          >
+            Register for Workshop →
+          </a>
+        </div>
+      )
     },
     {
       id: 6,
+      question: 'How do I submit my project?',
+      answer: (
+        <div>
+          <p>Use the Submission Link before the deadline (November 5, 2025). Submissions after the window will not be accepted.</p>
+          <a 
+            href={hackathonData.resources.submissionForm} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center gap-2 text-secondary hover:text-accent transition-colors duration-300 underline"
+          >
+            Submission Form →
+          </a>
+        </div>
+      )
+    },
+    {
+      id: 7,
+      question: 'What are the important dates?',
+      answer: (
+        <div className="space-y-2">
+          <ul className="list-disc pl-5 space-y-1">
+            <li><span className="font-semibold">Online Workshop:</span> October 25, 2025 (Saturday) | 6:30 PM – 8:30 PM</li>
+            <li><span className="font-semibold">Submission Deadline:</span> November 5, 2025</li>
+            <li><span className="font-semibold">Winners Announced:</span> November 10, 2025</li>
+          </ul>
+        </div>
+      )
+    },
+    {
+      id: 8,
       question: 'What are the tracks?',
       answer: (
         <div className="space-y-2">
@@ -95,7 +150,7 @@ const FAQSection = () => {
       )
     },
     {
-      id: 7,
+      id: 9,
       question: 'What are the prizes?',
       answer: (
         <div className="space-y-3">
@@ -109,7 +164,7 @@ const FAQSection = () => {
       )
     },
     {
-      id: 8,
+      id: 10,
       question: 'Can I ask for help?',
       answer: (
         <div>
@@ -126,12 +181,12 @@ const FAQSection = () => {
       )
     },
     {
-      id: 9,
+      id: 11,
       question: 'What happens if I copy a project?',
       answer: 'Copied projects will be disqualified. Inspiration is welcome, but originality is required.'
     },
     {
-      id: 10,
+      id: 12,
       question: 'Where can I ask more questions?',
       answer: (
         <div>
@@ -148,9 +203,9 @@ const FAQSection = () => {
       )
     },
     {
-      id: 11,
+      id: 13,
       question: 'Can I register after submissions have already started?',
-      answer: 'Yes! The registration window stays open throughout. You just need to register and submit your project before the submission deadline.'
+      answer: 'Yes! The registration window stays open throughout. You just need to register and submit your project before the submission deadline (November 5, 2025).'
     }
   ];
 

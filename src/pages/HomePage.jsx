@@ -6,6 +6,7 @@ import SubmissionSection from '../components/sections/SubmissionSection';
 import ResourcesSection from '../components/sections/ResourcesSection';
 import OrganizersSection from '../components/sections/OrganizersSection';
 import TimelineSection from '../components/sections/TimelineSection';
+import WorkshopSection from '../components/sections/WorkshopSection';
 import CodeOfConductSection from '../components/sections/CodeOfConductSection';
 import FAQSection from '../components/sections/FAQSection';
 
@@ -19,6 +20,7 @@ const HomePage = () => {
       <SubmissionSection />
       <ResourcesSection />
       <TimelineSection />
+      <WorkshopSection />
       <FAQSection />
       <CodeOfConductSection />
       <OrganizersSection />

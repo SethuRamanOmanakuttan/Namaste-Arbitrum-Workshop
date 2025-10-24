@@ -21,8 +21,8 @@ export const AppProvider = ({ children }) => {
       },
       onlineSession: 'October 25 | Saturday | 6:30 – 8:30 PM',
       submissionStart: 'October 15, 2025',
-      submission: 'October 31, 2025',
-      announcement: 'November 5, 2025',
+      submission: 'November 5, 2025',
+      announcement: 'November 10, 2025',
     },
     prizePool: '$3,000',
     prizes: {
@@ -73,7 +73,9 @@ export const AppProvider = ({ children }) => {
     ],
     resources: {
       doc: 'https://assets.pyor.xyz/namaste-arbitrum/build-with-stylus.pdf',
-      registrationForm: 'https://forms.gle/A5hLZrZyCNwJ48aS6',
+      registrationForm: 'https://docs.google.com/forms/d/e/1FAIpQLSfkROHo6H3SkldnPqKsJPCKRswpk7PuAIL1VKaPyySVKFToLg/viewform',
+      workshopForm: 'https://docs.google.com/forms/d/e/1FAIpQLSeJl0NPstY_AIh2T5TDZ94lbw6JL5K5HOHo4GrvlYabt5z2Rg/viewform',
+      submissionForm: 'https://forms.gle/g1XtDmjcdFcPNZnp9',
     },
     organizers: [
       {

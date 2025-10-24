@@ -86,7 +86,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
-            <a href="https://forms.gle/KTjNfHy3wDJWAStq6" target='_blank' className="btn bg-accent text-white border-accent hover:bg-accent/90 hover:shadow-pink-glow transition-all duration-300 rounded-sm font-medium">Register Now</a>
+            <a href={hackathonData.resources.registrationForm} target='_blank' rel="noopener noreferrer" className="btn bg-accent text-white border-accent hover:bg-accent/90 hover:shadow-pink-glow transition-all duration-300 rounded-sm font-medium">Register Now</a>
             <a href="#tracks" className="btn bg-transparent text-white border-2 border-secondary hover:bg-secondary/10 transition-all duration-300 rounded-sm font-medium">Explore Tracks</a>
           </motion.div>
           
