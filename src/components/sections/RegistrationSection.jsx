@@ -8,7 +8,7 @@ const RegistrationSection = () => {
   const { isRegistrationOpen, currentPhase, hackathonData } = useAppContext();
   
   // Use the registration form URL from the context
-  const registrationFormUrl = "https://forms.gle/KTjNfHy3wDJWAStq6";
+  const registrationFormUrl = "https://forms.gle/A5hLZrZyCNwJ48aS6";
   
   return (
     <section id="registration" className="py-16 bg-primary relative overflow-hidden">
@@ -83,7 +83,7 @@ const RegistrationSection = () => {
               
               <div className="flex justify-center">
                 <a 
-                  href="https://forms.gle/KTjNfHy3wDJWAStq6" 
+                  href="https://forms.gle/A5hLZrZyCNwJ48aS6" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-accent text-white px-8 py-3 border border-accent hover:shadow-pink-glow transition-all duration-300 inline-flex items-center gap-2 font-medium rounded-sm shadow-sleek-shadow transform hover:scale-105"

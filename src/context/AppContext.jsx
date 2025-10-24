@@ -19,7 +19,7 @@ export const AppProvider = ({ children }) => {
         start: 'October 10, 2025',
         end: 'October 14, 2025',
       },
-      onlineSession: 'To be finalized',
+      onlineSession: 'October 25 | Saturday | 6:30 – 8:30 PM',
       submissionStart: 'October 15, 2025',
       submission: 'October 31, 2025',
       announcement: 'November 5, 2025',
@@ -73,7 +73,7 @@ export const AppProvider = ({ children }) => {
     ],
     resources: {
       doc: 'https://assets.pyor.xyz/namaste-arbitrum/build-with-stylus.pdf',
-      registrationForm: 'https://forms.gle/KTjNfHy3wDJWAStq6',
+      registrationForm: 'https://forms.gle/A5hLZrZyCNwJ48aS6',
     },
     organizers: [
       {
