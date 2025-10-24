@@ -8,7 +8,7 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   // State values
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(true);
-  const [currentPhase, setCurrentPhase] = useState('registration'); // registration, development, judging, completed
+  const [currentPhase, setCurrentPhase] = useState('development'); // registration, development, judging, completed
   
   // Hackathon data based on provided details
   const hackathonData = {

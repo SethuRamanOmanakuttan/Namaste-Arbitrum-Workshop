@@ -53,6 +53,18 @@ const SubmissionSection = () => {
                   ? `Project submissions will open on ${hackathonData.dates.submissionStart}.` 
                   : 'The submission deadline has passed. Thank you for your participation!'}
               </p>
+              {currentPhase === 'registration' && (
+                <div className="flex justify-center mt-6">
+                  <a 
+                    href={hackathonData.resources.registrationForm} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-accent text-white px-8 py-3 border-2 border-accent hover:shadow-pink-glow transition-all duration-300 inline-flex items-center gap-2 font-medium"
+                  >
+                    Submit Project <FiExternalLink />
+                  </a>
+                </div>
+              )}
             </motion.div>
           ) : (
             <motion.div 
